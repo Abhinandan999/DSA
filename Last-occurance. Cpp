@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+// Function to find the last occurrence of a given element
+int findLastOccurrence(int arr[], int size, int key) {
+    int lastIndex = -1; // Initialize with -1, meaning not found
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            lastIndex = i; // Update lastIndex whenever key is found
+        }
+    }
+
+    return lastIndex; // Return the last occurrence index
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 2, 4, 5, 2}; // Example array
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key;
+
+    cout << "Enter the element to find its last occurrence: ";
+    cin >> key;
+
+    int result = findLastOccurrence(arr, size, key);
+
+    if (result != -1) {
+        cout << "The last occurrence of " << key << " is at index " << result << "." << endl;
+    } else {
+        cout << key << " is not found in the array." << endl;
+    }
+
+    return 0;
+}
